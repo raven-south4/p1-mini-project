@@ -1,0 +1,36 @@
+def average(s1, s2, s3):
+    return (s1 + s2 + s3) / 3
+
+def status(average):
+    if average >= 90:
+        return "Excellent"
+    elif average >= 80:
+        return "Very Good"
+    elif average >= 75:
+        return "Passed"
+    else:
+        return "Failed"
+
+num_students = int(input("Enter how many students to process: "))
+
+while num_students < 3:
+    print("Error: You must process at least 3 students.")
+    num_students = int(input("Enter how many students to process: "))
+
+for i in range(num_students):
+    print("Processing student number", i + 1)
+    
+    name = input("Enter student name: ")
+    
+    score1 = float(input("Enter Activity 1 score: "))
+    score2 = float(input("Enter Activity 2 score: "))
+    score3 = float(input("Enter Activity 3 score: "))
+    
+    final_average = average(score1, score2, score3)
+    student_status = status(final_average)
+    
+    print("Name:", name)
+    print("Scores:", score1, ",", score2, ",", score3)
+    print("Average:", final_average)
+    print("Status:", student_status)
+    print()
